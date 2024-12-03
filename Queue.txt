@@ -1,0 +1,145 @@
+Q.3 Write a program to demonstarte operation on queue(Enqueue, Dequeue, Search).
+
+Solution:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 5  
+
+struct Queue {
+    int arr[MAX];
+    int front, rear;
+};
+
+// Function to initialize the queue
+void initializeQueue(struct Queue *q) {
+    q->front = -1;
+    q->rear = -1;
+}
+
+int isFull(struct Queue *q) {
+    if (q->rear == MAX - 1) {
+        return 1;
+    }
+    return 0;
+}
+
+int isEmpty(struct Queue *q) {
+    if (q->front == -1 || q->front > q->rear) {
+        return 1;
+    }
+    return 0;
+}
+
+void enqueue(struct Queue *q, int value) {
+    if (isFull(q)) {
+        printf("Queue is full! Cannot enqueue %d\n", value);
+    } else {
+        if (q->front == -1) {
+            q->front = 0;  // Initialize front if it was empty
+        }
+        q->rear++;
+        q->arr[q->rear] = value;
+        printf("Enqueued: %d\n", value);
+    }
+}
+
+void dequeue(struct Queue *q) {
+    if (isEmpty(q)) {
+        printf("Queue is empty! Cannot dequeue.\n");
+    } else {
+        printf("Dequeued: %d\n", q->arr[q->front]);
+        q->front++;
+    }
+}
+void search(struct Queue *q, int value) {
+    if (isEmpty(q)) {
+        printf("Queue is empty! Cannot search for %d.\n", value);
+    } else {
+        int found = 0;
+        for (int i = q->front; i <= q->rear; i++) {
+            if (q->arr[i] == value) {
+                found = 1;
+                printf("Element %d found at position %d in the queue.\n", value, i - q->front + 1);
+                break;
+            }
+        }
+        if (!found) {
+            printf("Element %d not found in the queue.\n", value);
+        }
+    }
+}
+
+void display(struct Queue *q) {
+    if (isEmpty(q)) {
+        printf("Queue is empty.\n");
+    } else {
+        printf("Queue elements: ");
+        for (int i = q->front; i <= q->rear; i++) {
+            printf("%d ", q->arr[i]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    struct Queue q;
+    int choice, value;
+    initializeQueue(&q);
+
+    while (1) {
+        printf("\nQueue Operations Menu:\n");
+        printf("1. Enqueue\n");
+        printf("2. Dequeue\n");
+        printf("3. Search\n");
+        printf("4. Display Queue\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter value to enqueue: ");
+                scanf("%d", &value);
+                enqueue(&q, value);
+                break;
+
+            case 2:
+                dequeue(&q);
+                break;
+
+            case 3:
+                printf("Enter value to search: ");
+                scanf("%d", &value);
+                search(&q, value);
+                break;
+
+            case 4:
+                display(&q);
+                break;
+
+            case 5:
+                printf("Exiting the program.\n");
+                exit(0);
+
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+
+    return 0;
+}
+
+Output:
+
+Queue Operations Menu:
+1. Enqueue
+2. Dequeue
+3. Search
+4. Display Queue
+5. Exit
+Enter your choice: 1
+Enter value to enqueue: 20
+Enqueued: 20
+
