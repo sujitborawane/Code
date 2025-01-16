@@ -1,0 +1,56 @@
+# Read the number from keyboard and find out whether it is positive or negative
+"""
+num = int(input("Enter The Number:"))
+if num > 0:
+    print("Enter Element iS Positive")
+else:
+    print("Enter Number Is Negative")
+
+#write a program to read number from user and find whether number is odd or even
+
+num1 = int(input("Enter The Number:"))
+if num1/2:
+    print("Number Is Even")
+else:
+    print("Number Is Odd")
+
+num1 = 11
+num2 = 2
+x = 10
+div = num1 / num2
+div2 = num1 // num2
+Rem = num1 % num2
+Expo = num1 ** num2
+print(x in [15, 20, 30, 10, 45])
+print(x not in [15, 20, 30, 10, 45])
+print(div)
+print(div2)
+print(Rem)
+print(Expo)
+print(2 is 2)
+print(2 is '2')
+print(2 is 2.0)
+
+age = int(input("Enter The Age"))
+if age > 18:
+    print("Person Are  Eligible For Voting")
+else:
+    print("Person Are Not Eligible For Voting")
+
+num1 = int(input("Enter First Number:"))
+num2 = int(input("Enter Second Number:"))
+if num1 > num2:
+    print(f"{num1} is greater than {num2}")
+else:
+    print(f"{num2} is greater than {num1}")
+"""
+
+num1 = int(input("Enter First Number:"))
+num2 = int(input("Enter Second Number:"))
+num3 = int(input("Enter Third Number:"))
+if num1 > num2 and num1 > num3:
+    print("Num1 is greater")
+if num2 > num1 and num2 > num3:
+    print(" Num2 is greater")
+else:
+    print("Num3 is greater")
