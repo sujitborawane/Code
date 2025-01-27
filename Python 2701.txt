@@ -1,0 +1,86 @@
+# Find the addition of all odd number in 1 to 20
+'''
+odd_sum=0
+for i in range(1,21):
+    if i%2!=0:
+        odd_sum+=i
+print(odd_sum)
+
+sum =0
+for i in range(2,21,2):
+    sum=sum+i
+    print(sum)
+
+for i in range(10):
+
+    if i == 5:
+        continue
+    print(i)
+
+
+for i in range(10):
+    if i%2 == 1:
+        continue
+    print(i)
+
+# Find Factorial Number
+num = 5
+factorial = 1
+for i in range (1, num+1):
+    factorial = factorial * i
+    print(factorial)
+      
+
+i = 1
+temp = 0
+while i<=10:
+    temp = temp +i
+    i = i+1
+print(temp)    
+
+#Read a number from user and file factorial of the number
+num = int(input("Enter a number: "))
+factorial = 1
+for i in range(1, num+1):
+     factorial = factorial * i
+     print(factorial)
+ 
+fact = 1
+for i in range(5,0,-1):
+    fact = fact * i
+    print(fact)
+
+#Take a number from user and find sum of digit
+num = int(input("Enter The Number:"))
+sum = 0
+while num>0:
+    digit = num % 10
+    num = num // 10
+    sum = sum + digit
+else:
+     print(sum)    
+   
+num = int(input("Enter The Number:"))
+a = 0
+b = 0
+while num>0:
+    b = num % 10
+    a = a*10 +b
+    num = num // 10
+print(a)    
+'''  
+# Write a Program to  to find fibonaci series
+num = int (input("Enter The Number:"))
+a = 1
+b = 1
+print(a)
+print(b)
+for i in range(0, num):
+
+    c = a+b
+    a = b
+    b = c
+    print(c)
+
+    
+
